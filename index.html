@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head class="mui-bar mui-bar-nav mui-bar-transparent">
+	<h1 class="mui-title" style="font:'楷体'; font-size: 28px; margin: auto;" id="h1">普通计算机</h1>
+	<!-- mui自带的 透明标题 -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>计算器</title>
+    <script src="js/mui.min.js"></script>
+    <link href="css/mui.min.css" rel="stylesheet"/>
+	<link href="css/mycss.css" rel="stylesheet"/>
+<!-- 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script> -->
+	<!-- 翻页逻辑 -->
+	<script type="text/javascript" src="js/jquery-3.1.1.js" charset="utf-8"></script>
+    <script type="text/javascript" charset="utf-8">
+      	mui.init();
+    </script>
+</head>
+
+<body>
+	<div class="musicDiv">
+       <audio id="music" src="tock.ogg"></audio>
+	</div>
+	
+	<!-- 声音开关 -->
+	<div class="mui-switch"  id="switch" style="float:right; margin-top: 1%;">
+		<div class="mui-switch-handle" id="more"></div>
+	</div>
+	
+	<div class="div3">
+		<!-- 图标 -->
+		<a id="btn1" class="mui-icon mui-icon-loop" style="font-size: 36px; margin-top: 3px;margin-left: 3px;"></a>
+	</div>
+	
+	<!-- 把输入框挤下去 -->
+	<div class="block" style="height: 30px;"></div>
+	
+	<!-- 输入框合并 使用mui  box1同一输入框样式-->
+	<div class="box1 mui-input-group" >
+		<input type="text" class="mui-input-clear" id="txt1" disabled="disabled">
+		<input type="text" class="mui-input-clear" id="txt2" value="0" disabled="disabled">
+	</div>
+	
+	<!-- box2 放li button 方便布局 -->
+	<div class="box">
+	    <ul class="list">
+			<div id="div2">
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 20px;">(</button></li>
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 20px;">)</button></li>
+				<li><button type="button" class="mui-btn mui-btn-danger mui-btn-outlined"  style="font-size: 20px;">c</button></li>
+				<li><button type="button" class="mui-btn mui-btn-danger mui-btn-outlined" style="font-size: 20px;">del</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">7</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">8</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">9</button></li>
+				<li><button type="button" class="mui-btn mui-btn-royal mui-btn-outlined"  style="font-size: 30px;">/</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">4</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">5</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">6</button></li>
+				<li><button type="button" class="mui-btn mui-btn-royal mui-btn-outlined" style="font-size: 30px;">*</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">1</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">2</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">3</button></li>
+				<li><button type="button" class="mui-btn mui-btn-royal mui-btn-outlined" style="font-size: 30px;">-</button></li>
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 30px;">.</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">0</button></li>
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined"style="font-size: 30px;">=</button></li>
+				<li><button type="button" class="mui-btn mui-btn-royal mui-btn-outlined"  style="font-size: 30px;">+</button></li>
+			</div>
+			<div id="div1">
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 20px;">sin</button></li>
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 20px;">cos</button></li>
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 20px;">tan</button></li>
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 20px;">√</button></li>
+
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 20px;">(</button></li>
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 20px;">)</button></li>
+				<li><button type="button" class="mui-btn mui-btn-danger mui-btn-outlined" style="font-size: 20px;">c</button></li>
+				<li><button type="button" class="mui-btn mui-btn-danger mui-btn-outlined" style="font-size: 20px;">del</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">7</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">8</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">9</button></li>
+				<li><button type="button" class="mui-btn mui-btn-royal mui-btn-outlined" style="font-size: 30px;">/</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">4</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">5</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">6</button></li>
+				<li><button type="button" class="mui-btn mui-btn-royal mui-btn-outlined" style="font-size: 30px;">*</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">1</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">2</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">3</button></li>
+				<li><button type="button" class="mui-btn mui-btn-royal mui-btn-outlined" style="font-size: 30px;">-</button></li>
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 30px;">.</button></li>
+				<li><button type="button" class="mui-btn mui-btn-primary mui-btn-outlined" style="font-size: 30px;">0</button></li>
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 30px;">=</button></li>
+				<li><button type="button" class="mui-btn mui-btn-royal mui-btn-outlined" style="font-size: 30px;">+</button></li>
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 20px;">ln</button></li>
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 20px;">lg</button></li>
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 20px;">e</button></li>
+				<li><button type="button" class="mui-btn mui-btn-success mui-btn-outlined" style="font-size: 20px;">π</button></li>
+			</div>
+	    </ul>
+	</div>
+</body>
+
+<!-- 等h5加载好再加载逻辑 -->
+<script src="js/myjs.js"></script>
+</html>
